@@ -155,7 +155,7 @@ static int zero_mode = 0;
 
 static void render_chart() {
     const Color metricColors[] = { RED, GREEN, BLUE, ORANGE }; // Colors for metrics
-    const char* metricLabels[] = { "Recall", "Precision", "F1", "Accuracy" };
+    const char* metricLabels[] = { "Precision", "Recall", "F1", "Accuracy" };
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Models Visualization");
     Font customFont = LoadFontEx("arial.ttf", 20, NULL, 0); // Custom font
@@ -219,8 +219,8 @@ static void render_chart() {
                         }
                     } else{
                         switch (j) {
-                            case 0: value = smell_report->precision0; break;
-                            case 1: value = smell_report->recall0; break;
+                            case 0: value = smell_report->recall0; break;
+                            case 1: value = smell_report->precision0; break;
                             case 2: value = smell_report->f10; break;
                             case 3: value = smell_report->accuracy0; break;
                         }
